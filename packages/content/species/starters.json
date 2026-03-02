@@ -1,0 +1,158 @@
+[
+  {
+    "id": "emberpup",
+    "name": "Emberpup",
+    "description": "A fiery young pup whose tail burns with an eternal flame. Its loyalty is as warm as its fire.",
+    "types": ["fire"],
+    "baseStats": { "hp": 45, "attack": 55, "defense": 40, "specialAttack": 65, "specialDefense": 45, "speed": 60 },
+    "catchDifficulty": 5,
+    "evolutionPaths": [{ "targetSpeciesId": "blazehound", "trigger": { "kind": "level", "level": 16 } }],
+    "learnableMoves": [
+      { "moveId": "ember", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "tackle", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "growl", "learnMethod": { "kind": "levelUp", "level": 5 } },
+      { "moveId": "flame-fang", "learnMethod": { "kind": "levelUp", "level": 12 } },
+      { "moveId": "fire-spin", "learnMethod": { "kind": "levelUp", "level": 18 } }
+    ],
+    "baseExpYield": 64,
+    "growthRate": "medium"
+  },
+  {
+    "id": "blazehound",
+    "name": "Blazehound",
+    "description": "A fierce fire hound that can track any scent through smoke and flame. Its mane blazes when angered.",
+    "types": ["fire"],
+    "baseStats": { "hp": 65, "attack": 75, "defense": 55, "specialAttack": 85, "specialDefense": 60, "speed": 80 },
+    "catchDifficulty": 8,
+    "evolutionPaths": [{ "targetSpeciesId": "infernowolf", "trigger": { "kind": "level", "level": 36 } }],
+    "learnableMoves": [
+      { "moveId": "ember", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "flame-fang", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "flamethrower", "learnMethod": { "kind": "levelUp", "level": 22 } },
+      { "moveId": "fire-blast", "learnMethod": { "kind": "levelUp", "level": 34 } }
+    ],
+    "baseExpYield": 142,
+    "growthRate": "medium"
+  },
+  {
+    "id": "infernowolf",
+    "name": "Infernowolf",
+    "description": "A majestic wolf wreathed in eternal flame. Ancient tales say it guards the gates of volcanoes.",
+    "types": ["fire", "dark"],
+    "baseStats": { "hp": 85, "attack": 95, "defense": 70, "specialAttack": 110, "specialDefense": 75, "speed": 100 },
+    "catchDifficulty": 12,
+    "evolutionPaths": [],
+    "learnableMoves": [
+      { "moveId": "flamethrower", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "fire-blast", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "dark-pulse", "learnMethod": { "kind": "levelUp", "level": 40 } },
+      { "moveId": "inferno-howl", "learnMethod": { "kind": "levelUp", "level": 50 } }
+    ],
+    "baseExpYield": 240,
+    "growthRate": "medium"
+  },
+  {
+    "id": "tidalette",
+    "name": "Tidalette",
+    "description": "A small aquatic creature with shimmering blue scales. It playfully splashes in tide pools.",
+    "types": ["water"],
+    "baseStats": { "hp": 50, "attack": 45, "defense": 55, "specialAttack": 60, "specialDefense": 60, "speed": 40 },
+    "catchDifficulty": 5,
+    "evolutionPaths": [{ "targetSpeciesId": "wavecrest", "trigger": { "kind": "level", "level": 16 } }],
+    "learnableMoves": [
+      { "moveId": "water-gun", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "tackle", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "harden", "learnMethod": { "kind": "levelUp", "level": 5 } },
+      { "moveId": "bubble-beam", "learnMethod": { "kind": "levelUp", "level": 12 } },
+      { "moveId": "aqua-jet", "learnMethod": { "kind": "levelUp", "level": 18 } }
+    ],
+    "baseExpYield": 64,
+    "growthRate": "medium"
+  },
+  {
+    "id": "wavecrest",
+    "name": "Wavecrest",
+    "description": "An elegant sea dragon that rides the currents. Its fins can slice through coral reefs.",
+    "types": ["water"],
+    "baseStats": { "hp": 70, "attack": 60, "defense": 75, "specialAttack": 80, "specialDefense": 80, "speed": 55 },
+    "catchDifficulty": 8,
+    "evolutionPaths": [{ "targetSpeciesId": "tsunadon", "trigger": { "kind": "level", "level": 36 } }],
+    "learnableMoves": [
+      { "moveId": "bubble-beam", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "aqua-jet", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "surf", "learnMethod": { "kind": "levelUp", "level": 24 } },
+      { "moveId": "hydro-pump", "learnMethod": { "kind": "levelUp", "level": 34 } }
+    ],
+    "baseExpYield": 142,
+    "growthRate": "medium"
+  },
+  {
+    "id": "tsunadon",
+    "name": "Tsunadon",
+    "description": "A colossal sea serpent that commands the tides. Sailors both revere and fear its presence.",
+    "types": ["water", "dragon"],
+    "baseStats": { "hp": 95, "attack": 80, "defense": 90, "specialAttack": 110, "specialDefense": 95, "speed": 70 },
+    "catchDifficulty": 12,
+    "evolutionPaths": [],
+    "learnableMoves": [
+      { "moveId": "hydro-pump", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "surf", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "dragon-pulse", "learnMethod": { "kind": "levelUp", "level": 42 } },
+      { "moveId": "tidal-wrath", "learnMethod": { "kind": "levelUp", "level": 50 } }
+    ],
+    "baseExpYield": 240,
+    "growthRate": "medium"
+  },
+  {
+    "id": "sproutling",
+    "name": "Sproutling",
+    "description": "A tiny plant creature with a budding flower on its head. It thrives in sunlight and dew.",
+    "types": ["grass"],
+    "baseStats": { "hp": 50, "attack": 45, "defense": 55, "specialAttack": 60, "specialDefense": 55, "speed": 45 },
+    "catchDifficulty": 5,
+    "evolutionPaths": [{ "targetSpeciesId": "bloomwarden", "trigger": { "kind": "level", "level": 16 } }],
+    "learnableMoves": [
+      { "moveId": "vine-whip", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "tackle", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "growth", "learnMethod": { "kind": "levelUp", "level": 5 } },
+      { "moveId": "razor-leaf", "learnMethod": { "kind": "levelUp", "level": 12 } },
+      { "moveId": "leech-seed", "learnMethod": { "kind": "levelUp", "level": 18 } }
+    ],
+    "baseExpYield": 64,
+    "growthRate": "medium"
+  },
+  {
+    "id": "bloomwarden",
+    "name": "Bloomwarden",
+    "description": "A graceful plant guardian with vibrant petals. It nurtures the forest around it.",
+    "types": ["grass"],
+    "baseStats": { "hp": 70, "attack": 60, "defense": 75, "specialAttack": 80, "specialDefense": 75, "speed": 60 },
+    "catchDifficulty": 8,
+    "evolutionPaths": [{ "targetSpeciesId": "eldergrove", "trigger": { "kind": "level", "level": 36 } }],
+    "learnableMoves": [
+      { "moveId": "razor-leaf", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "leech-seed", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "solar-beam", "learnMethod": { "kind": "levelUp", "level": 26 } },
+      { "moveId": "petal-dance", "learnMethod": { "kind": "levelUp", "level": 34 } }
+    ],
+    "baseExpYield": 142,
+    "growthRate": "medium"
+  },
+  {
+    "id": "eldergrove",
+    "name": "Eldergrove",
+    "description": "An ancient tree spirit that has watched over forests for centuries. Its roots span entire valleys.",
+    "types": ["grass", "fairy"],
+    "baseStats": { "hp": 95, "attack": 75, "defense": 95, "specialAttack": 105, "specialDefense": 100, "speed": 65 },
+    "catchDifficulty": 12,
+    "evolutionPaths": [],
+    "learnableMoves": [
+      { "moveId": "solar-beam", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "petal-dance", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "moonblast", "learnMethod": { "kind": "levelUp", "level": 42 } },
+      { "moveId": "ancient-roots", "learnMethod": { "kind": "levelUp", "level": 50 } }
+    ],
+    "baseExpYield": 240,
+    "growthRate": "medium"
+  }
+]
