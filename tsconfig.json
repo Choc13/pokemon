@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "composite": true,
+    "jsx": "react-jsx"
+  },
+  "references": [
+    { "path": "./packages/domain" },
+    { "path": "./packages/ports" },
+    { "path": "./packages/adapters" },
+    { "path": "./packages/content" },
+    { "path": "./packages/app" }
+  ]
+}

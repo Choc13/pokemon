@@ -1,0 +1,163 @@
+[
+  {
+    "kind": "dialogue", "id": "prologue-start", "speaker": "Professor Elm",
+    "lines": ["Welcome to the world of Creature Chronicles!", "I am Professor Elm, a researcher studying the bond between humans and creatures.", "In our world, creatures roam freely — some in harmony with humans, others wild and untamed.", "Three factions debate the future of this relationship..."],
+    "next": "prologue-choice-starter"
+  },
+  {
+    "kind": "choice", "id": "prologue-choice-starter",
+    "prompt": "Professor Elm: Choose your first companion!",
+    "choices": [
+      { "text": "Emberpup (Fire) — A loyal, fiery pup", "target": "starter-fire", "effects": [{ "kind": "setFlag", "flag": "chose-starter" }, { "kind": "setFlag", "flag": "starter-fire" }] },
+      { "text": "Tidalette (Water) — A playful water sprite", "target": "starter-water", "effects": [{ "kind": "setFlag", "flag": "chose-starter" }, { "kind": "setFlag", "flag": "starter-water" }] },
+      { "text": "Sproutling (Grass) — A gentle plant bud", "target": "starter-grass", "effects": [{ "kind": "setFlag", "flag": "chose-starter" }, { "kind": "setFlag", "flag": "starter-grass" }] }
+    ]
+  },
+  {
+    "kind": "dialogue", "id": "starter-fire", "speaker": "Professor Elm",
+    "lines": ["Ah, Emberpup! A bold choice. This little one's loyalty burns as bright as its tail.", "Take good care of each other."],
+    "next": "post-starter"
+  },
+  {
+    "kind": "dialogue", "id": "starter-water", "speaker": "Professor Elm",
+    "lines": ["Tidalette! A wonderful companion. Its playful nature hides great depths of power.", "I know you two will make great partners."],
+    "next": "post-starter"
+  },
+  {
+    "kind": "dialogue", "id": "starter-grass", "speaker": "Professor Elm",
+    "lines": ["Sproutling! A gentle soul with the strength of ancient forests.", "Together, you'll grow into something extraordinary."],
+    "next": "post-starter"
+  },
+  {
+    "kind": "event", "id": "post-starter",
+    "effects": [
+      { "kind": "giveItem", "itemId": "potion", "quantity": 5 },
+      { "kind": "giveItem", "itemId": "befriend-crystal", "quantity": 10 }
+    ],
+    "next": "post-starter-dialogue"
+  },
+  {
+    "kind": "dialogue", "id": "post-starter-dialogue", "speaker": "Professor Elm",
+    "lines": ["Here, take these supplies for your journey.", "Head east through Verdant Path to reach Crestfall Village.", "Along the way, you'll encounter wild creatures. You can befriend them using Befriend Crystals!", "But first... it seems someone wants to test your skills."],
+    "next": "rival-appears"
+  },
+  {
+    "kind": "dialogue", "id": "rival-appears", "speaker": "Kael",
+    "lines": ["Hey! I heard you got a creature from the Professor too.", "Name's Kael. I picked my partner yesterday.", "How about a quick battle? I want to see what you're made of!"],
+    "next": "rival-battle-1"
+  },
+  {
+    "kind": "battle", "id": "rival-battle-1",
+    "trainerData": { "name": "Kael", "team": [{ "speciesId": "tidalette", "level": 5, "moveIds": ["water-gun", "tackle"] }], "difficulty": "tactical" },
+    "onWin": "rival-post-win", "onLose": "rival-post-lose"
+  },
+  {
+    "kind": "dialogue", "id": "rival-post-win", "speaker": "Kael",
+    "lines": ["Not bad! You and your creature make a good team.", "I'll be training hard. Next time we meet, I won't lose!", "See you on the road!"],
+    "next": "post-rival-event"
+  },
+  {
+    "kind": "dialogue", "id": "rival-post-lose", "speaker": "Kael",
+    "lines": ["Ha! Looks like I've got the edge for now.", "Don't worry — every tamer stumbles at first. Keep training!", "See you around!"],
+    "next": "post-rival-event"
+  },
+  {
+    "kind": "event", "id": "post-rival-event",
+    "effects": [{ "kind": "setFlag", "flag": "defeated-rival-1" }],
+    "next": "professor-sendoff"
+  },
+  {
+    "kind": "dialogue", "id": "professor-sendoff", "speaker": "Professor Elm",
+    "lines": ["That was a fine battle!", "Now, head east to Crestfall Village. Captain Stone runs the first official challenge there.", "Along the way, pay attention to the wild creatures you encounter.", "And remember — the bond between tamer and creature is the most powerful force in our world."],
+    "next": "journey-start"
+  },
+  {
+    "kind": "event", "id": "journey-start",
+    "effects": [{ "kind": "setFlag", "flag": "journey-started" }],
+    "next": "trainer-1-intro"
+  },
+  {
+    "kind": "dialogue", "id": "trainer-1-intro", "speaker": "Bug Catcher Tim",
+    "lines": ["Hey there! I love bug-type creatures!", "Let's battle!"],
+    "next": "trainer-1-end"
+  },
+  {
+    "kind": "event", "id": "trainer-1-end",
+    "effects": [],
+    "next": "trainer-2-intro"
+  },
+  {
+    "kind": "dialogue", "id": "trainer-2-intro", "speaker": "Hiker Bob",
+    "lines": ["Nothing like a good hike and a battle!", "My rock creatures are tough!"],
+    "next": "trainer-2-end"
+  },
+  {
+    "kind": "event", "id": "trainer-2-end",
+    "effects": [{ "kind": "setFlag", "flag": "reached-crestfall" }],
+    "next": "faction-intro"
+  },
+  {
+    "kind": "dialogue", "id": "faction-intro", "speaker": "Elder Sage",
+    "lines": ["Young tamer, welcome to Crestfall Village.", "I see you've already begun your journey with a creature companion.", "In our world, three factions hold different beliefs about the creature-human bond:"],
+    "next": "faction-choice"
+  },
+  {
+    "kind": "choice", "id": "faction-choice",
+    "prompt": "Elder Sage: Which philosophy resonates with you?",
+    "choices": [
+      { "text": "Liberation — Creatures should be free", "target": "faction-liberation", "effects": [{ "kind": "adjustFaction", "faction": "liberation", "amount": 10 }] },
+      { "text": "Harmony — Mutual partnership is the way", "target": "faction-harmony", "effects": [{ "kind": "adjustFaction", "faction": "harmony", "amount": 10 }] },
+      { "text": "Dominion — Creature power should advance humanity", "target": "faction-dominion", "effects": [{ "kind": "adjustFaction", "faction": "dominion", "amount": 10 }] }
+    ]
+  },
+  {
+    "kind": "dialogue", "id": "faction-liberation", "speaker": "Elder Sage",
+    "lines": ["A compassionate view. The Liberation Front believes creatures deserve autonomy.", "Their leader, Sage Lyra, would be pleased to hear that.", "Remember — your actions throughout your journey will shape your alignment."],
+    "next": "gym-1-intro"
+  },
+  {
+    "kind": "dialogue", "id": "faction-harmony", "speaker": "Elder Sage",
+    "lines": ["The balanced path. The Harmony Guild believes in mutual respect and partnership.", "Their leader, Commander Ash, has always championed cooperation.", "Your journey will test this belief many times."],
+    "next": "gym-1-intro"
+  },
+  {
+    "kind": "dialogue", "id": "faction-dominion", "speaker": "Elder Sage",
+    "lines": ["An ambitious perspective. The Dominion Order seeks to harness creature power for progress.", "Director Volt leads them with a vision of a stronger humanity.", "Be mindful — power without wisdom can lead to ruin."],
+    "next": "gym-1-intro"
+  },
+  {
+    "kind": "dialogue", "id": "gym-1-intro", "speaker": "Elder Sage",
+    "lines": ["Before you continue your journey, you should challenge Captain Stone.", "He tests aspiring tamers at the village arena. Defeat him to earn your first badge."],
+    "next": "gym-1-challenge"
+  },
+  {
+    "kind": "dialogue", "id": "gym-1-challenge", "speaker": "Captain Stone",
+    "lines": ["So, you want to challenge me?", "I am Captain Stone, guardian of Crestfall Village.", "My rock-type creatures are as unyielding as the mountains themselves!", "Show me the strength of your bond!"],
+    "next": "gym-1-battle"
+  },
+  {
+    "kind": "battle", "id": "gym-1-battle",
+    "trainerData": { "name": "Captain Stone", "team": [{ "speciesId": "pebblit", "level": 10, "moveIds": ["rock-throw", "harden", "tackle"] }, { "speciesId": "bouldron", "level": 12, "moveIds": ["rock-slide", "tackle", "harden"] }], "difficulty": "tactical" },
+    "onWin": "gym-1-win", "onLose": "gym-1-lose"
+  },
+  {
+    "kind": "event", "id": "gym-1-win",
+    "effects": [{ "kind": "setFlag", "flag": "badge-1" }, { "kind": "giveItem", "itemId": "forest-key", "quantity": 1 }],
+    "next": "gym-1-post-win"
+  },
+  {
+    "kind": "dialogue", "id": "gym-1-post-win", "speaker": "Captain Stone",
+    "lines": ["Incredible! Your bond with your creature is truly remarkable.", "Take this — the Stone Badge, proof of your victory.", "And this key — it opens the path to the Whispering Woods to the south.", "New routes are now open to you. The world awaits, young tamer!"],
+    "next": "chapter-1-complete"
+  },
+  {
+    "kind": "dialogue", "id": "gym-1-lose", "speaker": "Captain Stone",
+    "lines": ["A valiant effort, but you're not ready yet.", "Train more and come back when you're stronger!"],
+    "next": "gym-1-challenge"
+  },
+  {
+    "kind": "ending", "id": "chapter-1-complete",
+    "endingType": "chapter-end",
+    "description": "Chapter 1 Complete! You've earned your first badge and the world is opening up before you."
+  }
+]

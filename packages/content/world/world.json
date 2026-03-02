@@ -1,0 +1,90 @@
+{
+  "locations": [
+    {
+      "id": "haven-town", "name": "Haven Town", "description": "A peaceful town where new creature tamers begin their journey.", "type": "town",
+      "encounters": [],
+      "npcs": [
+        { "id": "professor-elm", "name": "Professor Elm", "sprite": "professor", "position": { "x": 5, "y": 3 }, "interaction": { "kind": "dialogue", "storyNodeId": "prologue-start" } },
+        { "id": "nurse-joy", "name": "Nurse Joy", "sprite": "nurse", "position": { "x": 8, "y": 5 }, "interaction": { "kind": "service", "serviceType": { "kind": "healingCenter" } } },
+        { "id": "shopkeeper", "name": "Shopkeeper", "sprite": "merchant", "position": { "x": 2, "y": 5 }, "interaction": { "kind": "service", "serviceType": { "kind": "shop", "inventory": ["potion", "antidote", "befriend-crystal"] } } },
+        { "id": "rival-haven", "name": "Kael", "sprite": "rival", "position": { "x": 7, "y": 3 }, "visibleWhen": ["chose-starter"], "hiddenWhen": ["defeated-rival-1"], "interaction": { "kind": "trainer", "trainerData": { "name": "Kael", "team": [{ "speciesId": "tidalette", "level": 6, "moveIds": ["water-gun", "tackle"] }], "difficulty": "tactical", "defeatFlag": "defeated-rival-1", "rematchable": false, "rewardMoney": 300 }, "storyNodeId": "rival-battle-1" } }
+      ],
+      "services": [{ "kind": "healingCenter" }, { "kind": "shop", "inventory": ["potion", "antidote", "befriend-crystal"] }],
+      "music": "haven-town", "tilemap": "haven-town", "width": 15, "height": 12
+    },
+    {
+      "id": "verdant-path", "name": "Verdant Path", "description": "A lush, winding trail through tall grass connecting Haven Town to Crestfall Village.",
+      "type": "route",
+      "encounters": [
+        { "speciesId": "breezlet", "minLevel": 3, "maxLevel": 5, "weight": 40 },
+        { "speciesId": "zappfly", "minLevel": 2, "maxLevel": 5, "weight": 30 },
+        { "speciesId": "thornback", "minLevel": 3, "maxLevel": 5, "weight": 20 },
+        { "speciesId": "pebblit", "minLevel": 4, "maxLevel": 6, "weight": 10 }
+      ],
+      "npcs": [
+        { "id": "trainer-1", "name": "Bug Catcher Tim", "sprite": "trainer-bug", "position": { "x": 6, "y": 4 }, "interaction": { "kind": "trainer", "trainerData": { "name": "Bug Catcher Tim", "team": [{ "speciesId": "zappfly", "level": 4, "moveIds": ["tackle", "thunder-shock"] }], "difficulty": "naive", "defeatFlag": "defeated-trainer-1", "rematchable": false, "rewardMoney": 120 }, "storyNodeId": "trainer-1-intro" } },
+        { "id": "trainer-2", "name": "Hiker Bob", "sprite": "trainer-hiker", "position": { "x": 10, "y": 7 }, "interaction": { "kind": "trainer", "trainerData": { "name": "Hiker Bob", "team": [{ "speciesId": "pebblit", "level": 5, "moveIds": ["tackle", "rock-throw"] }, { "speciesId": "pebblit", "level": 4, "moveIds": ["tackle"] }], "difficulty": "naive", "defeatFlag": "defeated-trainer-2", "rematchable": false, "rewardMoney": 200 }, "storyNodeId": "trainer-2-intro" } }
+      ],
+      "services": [],
+      "music": "route-theme", "tilemap": "verdant-path", "width": 20, "height": 12
+    },
+    {
+      "id": "crestfall-village", "name": "Crestfall Village", "description": "A mountain village overlooking the sea. Home to the first gym challenge.",
+      "type": "town",
+      "encounters": [],
+      "npcs": [
+        { "id": "gym-leader-1", "name": "Captain Stone", "sprite": "gym-leader-rock", "position": { "x": 5, "y": 3 }, "visibleWhen": ["reached-crestfall"], "interaction": { "kind": "trainer", "trainerData": { "name": "Captain Stone", "team": [{ "speciesId": "pebblit", "level": 10, "moveIds": ["rock-throw", "harden", "tackle"] }, { "speciesId": "bouldron", "level": 12, "moveIds": ["rock-slide", "tackle", "harden"] }], "difficulty": "tactical", "defeatFlag": "badge-1", "rematchable": false, "rewardMoney": 1000 }, "storyNodeId": "gym-1-challenge" } },
+        { "id": "nurse-crestfall", "name": "Nurse Maya", "sprite": "nurse", "position": { "x": 8, "y": 5 }, "interaction": { "kind": "service", "serviceType": { "kind": "healingCenter" } } },
+        { "id": "faction-npc", "name": "Elder Sage", "sprite": "elder", "position": { "x": 3, "y": 6 }, "interaction": { "kind": "dialogue", "storyNodeId": "faction-intro" } }
+      ],
+      "services": [{ "kind": "healingCenter" }, { "kind": "shop", "inventory": ["potion", "super-potion", "befriend-crystal", "harmony-crystal"] }],
+      "music": "crestfall-village", "tilemap": "crestfall-village", "width": 15, "height": 12
+    },
+    {
+      "id": "whispering-woods", "name": "Whispering Woods", "description": "A dark, mysterious forest filled with ghost and fairy creatures.",
+      "type": "dungeon",
+      "encounters": [
+        { "speciesId": "whispling", "minLevel": 8, "maxLevel": 12, "weight": 40 },
+        { "speciesId": "thornback", "minLevel": 7, "maxLevel": 10, "weight": 30 },
+        { "speciesId": "frostmite", "minLevel": 9, "maxLevel": 12, "weight": 20 },
+        { "speciesId": "breezlet", "minLevel": 8, "maxLevel": 11, "weight": 10 }
+      ],
+      "npcs": [],
+      "services": [],
+      "music": "dungeon-theme", "tilemap": "whispering-woods", "width": 25, "height": 20
+    },
+    {
+      "id": "stormridge-route", "name": "Stormridge Route", "description": "A windswept mountain pass with electric creatures.",
+      "type": "route",
+      "encounters": [
+        { "speciesId": "zappfly", "minLevel": 8, "maxLevel": 12, "weight": 35 },
+        { "speciesId": "pebblit", "minLevel": 9, "maxLevel": 12, "weight": 25 },
+        { "speciesId": "breezlet", "minLevel": 8, "maxLevel": 11, "weight": 25 },
+        { "speciesId": "frostmite", "minLevel": 10, "maxLevel": 13, "weight": 15 }
+      ],
+      "npcs": [],
+      "services": [],
+      "music": "route-theme", "tilemap": "stormridge-route", "width": 18, "height": 14
+    }
+  ],
+  "connections": {
+    "haven-town": [
+      { "targetLocationId": "verdant-path", "direction": "right", "description": "A path leads east to Verdant Path." }
+    ],
+    "verdant-path": [
+      { "targetLocationId": "haven-town", "direction": "left", "description": "The road leads back to Haven Town." },
+      { "targetLocationId": "crestfall-village", "direction": "right", "description": "The path continues east to Crestfall Village." }
+    ],
+    "crestfall-village": [
+      { "targetLocationId": "verdant-path", "direction": "left", "description": "The road leads west to Verdant Path." },
+      { "targetLocationId": "whispering-woods", "direction": "down", "requiredFlags": ["badge-1"], "description": "A dark path leads south into the Whispering Woods." },
+      { "targetLocationId": "stormridge-route", "direction": "up", "requiredFlags": ["badge-1"], "description": "A mountain trail leads north to Stormridge Route." }
+    ],
+    "whispering-woods": [
+      { "targetLocationId": "crestfall-village", "direction": "up", "description": "The path leads back north to Crestfall Village." }
+    ],
+    "stormridge-route": [
+      { "targetLocationId": "crestfall-village", "direction": "down", "description": "The trail leads back south to Crestfall Village." }
+    ]
+  }
+}

@@ -1,0 +1,170 @@
+[
+  {
+    "id": "zappfly",
+    "name": "Zappfly",
+    "description": "A buzzing insect that generates static electricity. Swarms of them can power a small town.",
+    "types": ["bug", "electric"],
+    "baseStats": { "hp": 40, "attack": 35, "defense": 30, "specialAttack": 50, "specialDefense": 35, "speed": 65 },
+    "catchDifficulty": 2,
+    "evolutionPaths": [{ "targetSpeciesId": "voltbeetle", "trigger": { "kind": "level", "level": 20 } }],
+    "learnableMoves": [
+      { "moveId": "tackle", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "thunder-shock", "learnMethod": { "kind": "levelUp", "level": 5 } },
+      { "moveId": "bug-bite", "learnMethod": { "kind": "levelUp", "level": 9 } },
+      { "moveId": "spark", "learnMethod": { "kind": "levelUp", "level": 15 } }
+    ],
+    "baseExpYield": 45,
+    "growthRate": "fast"
+  },
+  {
+    "id": "voltbeetle",
+    "name": "Voltbeetle",
+    "description": "A sturdy beetle crackling with electricity. Its horn can discharge lightning bolts.",
+    "types": ["bug", "electric"],
+    "baseStats": { "hp": 65, "attack": 60, "defense": 70, "specialAttack": 75, "specialDefense": 60, "speed": 50 },
+    "catchDifficulty": 5,
+    "evolutionPaths": [],
+    "learnableMoves": [
+      { "moveId": "spark", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "bug-bite", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "thunderbolt", "learnMethod": { "kind": "levelUp", "level": 26 } },
+      { "moveId": "x-scissor", "learnMethod": { "kind": "levelUp", "level": 32 } }
+    ],
+    "baseExpYield": 135,
+    "growthRate": "fast"
+  },
+  {
+    "id": "pebblit",
+    "name": "Pebblit",
+    "description": "A small rock creature that tumbles along mountain paths. Surprisingly cheerful.",
+    "types": ["rock"],
+    "baseStats": { "hp": 50, "attack": 60, "defense": 70, "specialAttack": 25, "specialDefense": 40, "speed": 30 },
+    "catchDifficulty": 2,
+    "evolutionPaths": [{ "targetSpeciesId": "bouldron", "trigger": { "kind": "level", "level": 24 } }],
+    "learnableMoves": [
+      { "moveId": "tackle", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "rock-throw", "learnMethod": { "kind": "levelUp", "level": 6 } },
+      { "moveId": "harden", "learnMethod": { "kind": "levelUp", "level": 10 } },
+      { "moveId": "rock-slide", "learnMethod": { "kind": "levelUp", "level": 18 } }
+    ],
+    "baseExpYield": 50,
+    "growthRate": "medium"
+  },
+  {
+    "id": "bouldron",
+    "name": "Bouldron",
+    "description": "A massive stone golem. It protects its territory with devastating rock throws.",
+    "types": ["rock", "ground"],
+    "baseStats": { "hp": 80, "attack": 95, "defense": 110, "specialAttack": 35, "specialDefense": 55, "speed": 35 },
+    "catchDifficulty": 6,
+    "evolutionPaths": [],
+    "learnableMoves": [
+      { "moveId": "rock-slide", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "earthquake", "learnMethod": { "kind": "levelUp", "level": 30 } },
+      { "moveId": "stone-edge", "learnMethod": { "kind": "levelUp", "level": 38 } }
+    ],
+    "baseExpYield": 175,
+    "growthRate": "medium"
+  },
+  {
+    "id": "whispling",
+    "name": "Whispling",
+    "description": "A mischievous ghost that hides in shadows and whispers riddles to travelers.",
+    "types": ["ghost"],
+    "baseStats": { "hp": 35, "attack": 30, "defense": 30, "specialAttack": 65, "specialDefense": 55, "speed": 70 },
+    "catchDifficulty": 3,
+    "evolutionPaths": [{ "targetSpeciesId": "phantomwail", "trigger": { "kind": "level", "level": 28 } }],
+    "learnableMoves": [
+      { "moveId": "shadow-sneak", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "lick", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "shadow-ball", "learnMethod": { "kind": "levelUp", "level": 18 } },
+      { "moveId": "hex", "learnMethod": { "kind": "levelUp", "level": 24 } }
+    ],
+    "baseExpYield": 55,
+    "growthRate": "medium"
+  },
+  {
+    "id": "phantomwail",
+    "name": "Phantomwail",
+    "description": "A powerful specter whose wailing can be heard across valleys. It guards ancient tombs.",
+    "types": ["ghost", "dark"],
+    "baseStats": { "hp": 60, "attack": 50, "defense": 55, "specialAttack": 105, "specialDefense": 85, "speed": 90 },
+    "catchDifficulty": 7,
+    "evolutionPaths": [],
+    "learnableMoves": [
+      { "moveId": "shadow-ball", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "dark-pulse", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "hex", "learnMethod": { "kind": "levelUp", "level": 30 } }
+    ],
+    "baseExpYield": 180,
+    "growthRate": "medium"
+  },
+  {
+    "id": "breezlet",
+    "name": "Breezlet",
+    "description": "A tiny bird that rides the wind. Its feathers shimmer with iridescent colors.",
+    "types": ["flying", "normal"],
+    "baseStats": { "hp": 40, "attack": 50, "defense": 35, "specialAttack": 35, "specialDefense": 35, "speed": 65 },
+    "catchDifficulty": 2,
+    "evolutionPaths": [{ "targetSpeciesId": "galeclaw", "trigger": { "kind": "level", "level": 22 } }],
+    "learnableMoves": [
+      { "moveId": "tackle", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "gust", "learnMethod": { "kind": "levelUp", "level": 4 } },
+      { "moveId": "quick-attack", "learnMethod": { "kind": "levelUp", "level": 8 } },
+      { "moveId": "wing-attack", "learnMethod": { "kind": "levelUp", "level": 16 } }
+    ],
+    "baseExpYield": 45,
+    "growthRate": "fast"
+  },
+  {
+    "id": "galeclaw",
+    "name": "Galeclaw",
+    "description": "A fierce raptor that creates small tornadoes with its wingbeats. Apex predator of the skies.",
+    "types": ["flying", "fighting"],
+    "baseStats": { "hp": 70, "attack": 90, "defense": 60, "specialAttack": 55, "specialDefense": 55, "speed": 95 },
+    "catchDifficulty": 6,
+    "evolutionPaths": [],
+    "learnableMoves": [
+      { "moveId": "wing-attack", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "aerial-ace", "learnMethod": { "kind": "levelUp", "level": 26 } },
+      { "moveId": "close-combat", "learnMethod": { "kind": "levelUp", "level": 34 } },
+      { "moveId": "brave-bird", "learnMethod": { "kind": "levelUp", "level": 42 } }
+    ],
+    "baseExpYield": 170,
+    "growthRate": "fast"
+  },
+  {
+    "id": "frostmite",
+    "name": "Frostmite",
+    "description": "A tiny ice crystal creature that floats on cold winds. Its touch leaves a thin layer of frost.",
+    "types": ["ice"],
+    "baseStats": { "hp": 45, "attack": 30, "defense": 40, "specialAttack": 65, "specialDefense": 50, "speed": 55 },
+    "catchDifficulty": 3,
+    "evolutionPaths": [],
+    "learnableMoves": [
+      { "moveId": "powder-snow", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "icy-wind", "learnMethod": { "kind": "levelUp", "level": 8 } },
+      { "moveId": "ice-beam", "learnMethod": { "kind": "levelUp", "level": 22 } },
+      { "moveId": "blizzard", "learnMethod": { "kind": "levelUp", "level": 36 } }
+    ],
+    "baseExpYield": 60,
+    "growthRate": "medium"
+  },
+  {
+    "id": "thornback",
+    "name": "Thornback",
+    "description": "A sturdy reptile with sharp thorns along its spine. It basks in meadows, absorbing sunlight.",
+    "types": ["grass", "poison"],
+    "baseStats": { "hp": 55, "attack": 55, "defense": 65, "specialAttack": 45, "specialDefense": 50, "speed": 40 },
+    "catchDifficulty": 3,
+    "evolutionPaths": [],
+    "learnableMoves": [
+      { "moveId": "vine-whip", "learnMethod": { "kind": "levelUp", "level": 1 } },
+      { "moveId": "poison-sting", "learnMethod": { "kind": "levelUp", "level": 6 } },
+      { "moveId": "razor-leaf", "learnMethod": { "kind": "levelUp", "level": 14 } },
+      { "moveId": "sludge-bomb", "learnMethod": { "kind": "levelUp", "level": 26 } }
+    ],
+    "baseExpYield": 65,
+    "growthRate": "medium"
+  }
+]
